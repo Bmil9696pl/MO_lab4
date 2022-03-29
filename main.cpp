@@ -2,7 +2,7 @@
 #include <math.h>
 using namespace std;
 
-const double tol = 1e-16;
+const double tol = 2e-16;
 const int maxIt = 100;
 
 /**
@@ -131,7 +131,7 @@ void newton(double x, double y, double z){
 
         std::cout << "Iteracja "<< i << "\nx: " << x << "\ny: " << y << "\nz: " << z << "\nestymator: " << estymator << "\nreziduum: " << residuum << "\n\n";
 
-        if(fabs(residuum) <= tol && estymator <= tol || i >= maxIt)
+        if(fabs(residuum) <= tol && estymator <= tol && i >= maxIt)
             kont = false;
 
         wartosciFunkji[0] = funkcja1(x,y,z);
